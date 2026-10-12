@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#090909">
+<meta name="theme-color" content="#ffffff">
 <meta name="description" content="Discover your signature fragrance at Onyx Scents.">
 <title>Onyx Scents — Find Your Signature</title>
 <style>
@@ -17,6 +17,38 @@ section.shop{max-width:1160px;margin:auto;padding:85px 22px}.sectionhead{display
 .overlay{display:none;position:fixed;inset:0;background:#000a;z-index:30}.overlay.open{display:block}.cartpanel{position:fixed;z-index:31;right:0;top:0;height:100%;width:min(410px,100%);background:#111;border-left:1px solid var(--line);padding:22px;transform:translateX(100%);transition:transform .25s;display:flex;flex-direction:column}.cartpanel.open{transform:translateX(0)}.carthead{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:15px}.carthead h2{font-size:30px;margin:0}.close{background:transparent;border:1px solid #555;color:white;padding:8px;cursor:pointer}.items{overflow:auto;flex:1}.lineitem{display:flex;justify-content:space-between;gap:12px;padding:15px 0;border-bottom:1px solid #29251e}.lineitem small{display:block;color:#aaa;margin-top:5px}.lineitem button{background:none;border:0;color:var(--gold);cursor:pointer}.total{border-top:1px solid var(--line);padding-top:15px}.totalrow{display:flex;justify-content:space-between;margin-bottom:14px}.total .btn{width:100%;text-align:center}.note{font-size:11px;color:#aaa;line-height:1.6;margin-top:10px}.empty{text-align:center;color:#aaa;padding:40px 5px}
 @media(max-width:850px){.hero{gap:25px}.products{grid-template-columns:repeat(2,1fr)}.photo{height:270px}.storyinner{gap:28px}}
 @media(max-width:600px){nav{flex-wrap:wrap;padding:14px}.brand{font-size:20px}.links{order:3;width:100%;justify-content:center;gap:22px}.hero{grid-template-columns:1fr;padding:45px 17px;gap:28px}.art{height:340px}.art img{height:300px}.strip{grid-template-columns:1fr}.strip div+div{border-left:0;border-top:1px solid var(--line)}section.shop{padding:60px 15px}.sectionhead{display:block}.sectionhead p{margin-top:14px}.products{gap:10px}.photo{height:190px}.info{padding:12px}.info h3{font-size:18px}.info p{font-size:11px}.bottom{align-items:stretch;flex-direction:column}.add{width:100%}.storyinner{grid-template-columns:1fr;padding:55px 17px}.monogram{min-height:200px}.signup{flex-direction:column}.signup .btn{width:100%}}
+
+/* Light ivory-and-gold theme */
+:root{--bg:#fbfaf7;--panel:#ffffff;--gold:#b18a3c;--cream:#24211b;--muted:#706b62;--line:#e5ddce}
+body{background:var(--bg);color:var(--cream)}
+.announce{background:#f1e6cf;color:#493819}
+header{background:rgba(255,255,255,.94);border-bottom-color:#e9e2d6}
+.brand{color:#a77d2e}.brand small{color:#4e493f}
+.links{color:#4e493f}.links a:hover{color:#a77d2e}
+.cartbtn{color:#29251f;border-color:#d9cfbd}.cartbtn b{color:#a77d2e}
+.hero p,.copy p,.sectionhead p{color:#686258}
+.art{border-color:#e3d4b6;background:radial-gradient(ellipse,#f5ead5,#eee5d6 43%,#fbfaf7 73%)}
+.art:before,.art:after{border-color:#b18a3c55}
+.art img{mix-blend-mode:multiply}
+.stamp{color:#8c6826}
+.strip{border-color:#e5ddce}.strip div{color:#5c564b}.strip strong{color:#9b742d}.strip div+div{border-left-color:#e5ddce}
+.filter{color:#5c564b;border-color:#ded5c5}.filter.active,.filter:hover{color:#8c6826;border-color:#b18a3c}
+.product{background:#fff;border-color:#e8e1d5;box-shadow:0 5px 20px #33250b08}
+.photo{background:#f0ece4}.tag{background:#f1e6cf;color:#5b431a}
+.info h3{color:#28241e}.info p{color:#746e64}
+.category{color:#9b742d}.add{border-color:#d8c8a7;color:#8b6728}.add:hover{background:#b18a3c;color:#fff}
+.story{border-color:#e5ddce;background:linear-gradient(110deg,#f5efe4,#fff)}
+.monogram{border-color:#e2d4bb;background:radial-gradient(ellipse,#f0e3cb,#fff 68%);color:#a77d2e}
+.newsletter p{color:#706b62}
+.signup input{background:#fff;border-color:#ded5c5;color:#29251f}
+footer{border-top-color:#e5ddce;color:#706b62}
+.cartpanel{background:#fff;border-left-color:#e5ddce;color:#29251f}
+.carthead{border-bottom-color:#e5ddce}.close{border-color:#d6cbb9;color:#29251f}
+.lineitem{border-bottom-color:#eee8de}.lineitem small{color:#706b62}.lineitem button{color:#9b742d}
+.total{border-top-color:#e5ddce}.note,.empty{color:#706b62}
+.primary{background:#b18a3c;border-color:#b18a3c;color:#fff}
+.outline{color:#29251f}
+@media(max-width:600px){.strip div+div{border-top-color:#e5ddce}}
 </style>
 </head>
 <body>
