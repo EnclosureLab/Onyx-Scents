@@ -60,7 +60,7 @@ document.getElementById("applicationForm").addEventListener("submit",function(e)
  "",
  "Why would you like to join Onyx Scents?",
  values.get("why")||"Not provided"
- ].join("\\n");
+ ].join("\n");
  document.getElementById("formStatus").textContent="Opening your email app with the application filled in. Please review it and press Send.";
  window.location.href="mailto:lawsonhughes53@gmail.com?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
 });
