@@ -26,7 +26,7 @@ section{padding:55px 0;border-top:1px solid var(--line)}h2{font:normal clamp(34p
 <article class="role"><div class="number">02</div><h3>Order Fulfillment</h3><p>Support careful order preparation, inventory organization, and a reliable customer experience.</p><span class="tag">Area of interest</span></article>
 <article class="role"><div class="number">03</div><h3>Marketing & Social Media</h3><p>Help share product stories, create engaging content, and introduce more people to Onyx Scents.</p><span class="tag">Area of interest</span></article>
 </div></section>
-<section id="application"><div class="eyebrow">Take the next step</div><h2>Online Application</h2><p class="section-intro">Share a little about yourself and the kind of role you’re looking for.</p><div class="application"><aside><div class="eyebrow">Before you apply</div><h3 style="font:normal 27px Georgia;margin:12px 0">Make your first impression count.</h3><p>Tell us what you’re good at, what interests you about fragrance, and how you’d like to contribute. Please don’t include sensitive personal information such as Social Security numbers or banking details.</p><p><strong>Note:</strong> This application form is a front-end template and is not yet connected to a hiring inbox or application database.</p></aside>
+<section id="application"><div class="eyebrow">Take the next step</div><h2>Online Application</h2><p class="section-intro">Share a little about yourself and the kind of role you’re looking for.</p><div class="application"><aside><div class="eyebrow">Before you apply</div><h3 style="font:normal 27px Georgia;margin:12px 0">Make your first impression count.</h3><p>Tell us what you’re good at, what interests you about fragrance, and how you’d like to contribute. Please don’t include sensitive personal information such as Social Security numbers or banking details.</p><p><strong>Note:</strong> When you submit, your email app will open with your application addressed to lawsonhughes53@gmail.com. You must send the email to complete your application.</p></aside>
 <form class="form" id="applicationForm">
 <div class="field"><label for="fullName">Full name *</label><input id="fullName" name="fullName" autocomplete="name" required></div>
 <div class="field"><label for="email">Email address *</label><input id="email" name="email" type="email" autocomplete="email" required></div>
@@ -35,13 +35,35 @@ section{padding:55px 0;border-top:1px solid var(--line)}h2{font:normal clamp(34p
 <div class="field full"><label for="experience">Relevant experience or skills</label><textarea id="experience" name="experience" placeholder="Share experience, skills, or projects that may be relevant."></textarea></div>
 <div class="field full"><label for="why">Why would you like to join Onyx Scents? *</label><textarea id="why" name="why" required placeholder="Tell us what interests you about the team and role."></textarea></div>
 <div class="field full"><button class="btn" type="submit">Submit application</button></div>
-<p class="status" id="formStatus" role="status">Demo form only: submitting will not send or save your application yet.</p>
+<p class="status" id="formStatus" role="status">Submit opens an email draft with your application. Remember to press Send in your email app.</p>
 </form></div></section>
 </main>
 <footer><div class="foot"><a class="brand" href="index.html">ONYX SCENTS</a><span>© <span id="year"></span> Onyx Scents. All rights reserved.</span><a href="index.html">Return to shopping</a></div></footer>
 <script>
 document.getElementById("year").textContent=new Date().getFullYear();
-document.getElementById("applicationForm").addEventListener("submit",function(e){e.preventDefault();document.getElementById("formStatus").textContent="Thanks for your interest! This demo form is not connected to a hiring inbox yet, so your application has not been sent. Please check back for an active submission method.";});
+document.getElementById("applicationForm").addEventListener("submit",function(e){
+ e.preventDefault();
+ const form=e.currentTarget;
+ if(!form.reportValidity()) return;
+ const values=new FormData(form);
+ const subject="Onyx Scents Employment Application — "+values.get("fullName");
+ const body=[
+ "Onyx Scents Employment Application",
+ "",
+ "Full name: "+values.get("fullName"),
+ "Applicant email: "+values.get("email"),
+ "Position of interest: "+values.get("position"),
+ "Availability: "+(values.get("availability")||"Not provided"),
+ "",
+ "Relevant experience or skills:",
+ values.get("experience")||"Not provided",
+ "",
+ "Why would you like to join Onyx Scents?",
+ values.get("why")||"Not provided"
+ ].join("\\n");
+ document.getElementById("formStatus").textContent="Opening your email app with the application filled in. Please review it and press Send.";
+ window.location.href="mailto:lawsonhughes53@gmail.com?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
+});
 </script>
 </body>
 </html>
